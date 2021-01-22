@@ -1,7 +1,30 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <app-home></app-home>
+      <div class="arrangement-home">
+        <div class="row">
+            <img src="/assets/img/logo.png" style="height: 70px; width: auto;" alt="">
+        </div>
+        <div class="row title">
+            <p>Bienvenue sur votre espace Client</p>
+        </div>
+        <div class="row subtitle">
+            <p>Renseignez une valeur pour chaque champs</p>
+        </div>
+        <div class="row">
+            <form [formGroup]="formGraph">
+                <div class="form-row">
+                  <div class="col">
+                    <input type="number" class="form-control" formControlName="x" placeholder='Tapez "1"'>
+                  </div>
+                  <div class="col">
+                    <input type="number" class="form-control"formControlName="y" placeholder='Tapez "3"'>
+                  </div>
+                </div>
+                  <button type="submit" (click)="func_showGraphic()" class="btn btn-montri-on">Visualiser</button>
+              </form>
+        </div>
+    </div>
     </div>
     <div *ngIf="showGraphic" class="col-md-6">
       <app-graphic></app-graphic>
