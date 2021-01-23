@@ -14,16 +14,13 @@ export class AppComponent implements OnInit {
   constructor(private formBuilder : FormBuilder) {
 
   }
-
   title = 'montri';
-
-  showGraphic : boolean = false
+  x: '' = ""; 
+  y: '' = "";
+  showGraphic : boolean = false;
 
   formGraph!: FormGroup;
-
-  
     ngOnInit(): void {
-    
     this.formGraph = this.formBuilder.group({
       x: new FormControl({ value: '', disabled: false }, [
         Validators.required,
@@ -36,7 +33,6 @@ export class AppComponent implements OnInit {
     });
   }
 
- 
   
   get get_formGraph() { return this.formGraph.controls; }
   func_showGraphic() {
