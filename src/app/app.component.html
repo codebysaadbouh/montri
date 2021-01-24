@@ -13,12 +13,12 @@
         </div>
         <div class="row">
             <form [formGroup]="formGraph">
-                <div class="form-row">
+                <div class="form-row position-relative">
                   <div class="col">
-                    <input type="text" class="form-control" [(ngModel)]="x" formControlName="x" placeholder='Tapez "1"'>
+                    <input type="text is-valid" class="form-control"  [ngClass]="{ 'is-invalid': !formSubmitted && f_ }" [ngClass]="{ 'is-valid': formSubmitted && f_ }" [(ngModel)]="x" formControlName="x" placeholder='Tapez "1"'>
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" [(ngModel)]="y" formControlName="y" placeholder='Tapez "3"'>
+                    <input type="text" class="form-control" [ngClass]="{ 'is-invalid': !formSubmitted && f_ }" [ngClass]="{ 'is-valid': formSubmitted && f_ }"  [(ngModel)]="y" formControlName="y" placeholder='Tapez "3"'>
                   </div>
                 </div>
                   <button type="submit" (click)="func_showGraphic()" [disabled]="x === '' || y === '' " class="btn btn-montri-on">Visualiser</button>
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div *ngIf="showGraphic" class="col-md-6">
+    <div *ngIf="showGraphic" class="col-md-6 align-self-center">
       <app-graphic></app-graphic>
     </div>
   </div>
