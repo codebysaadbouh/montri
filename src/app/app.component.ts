@@ -12,7 +12,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class AppComponent implements OnInit {
 
   constructor(private formBuilder : FormBuilder) {
-
   }
   title = 'montri';
   x: '' = ""; 
@@ -25,9 +24,9 @@ export class AppComponent implements OnInit {
 
     ngOnInit(): void {
     this.formGraph = this.formBuilder.group({
-      x: new FormControl({ value: '', disabled: false }, [Validators.required, Validators.pattern("^[1-9]*$")
+      x: new FormControl({ value: '', disabled: false }, [Validators.required, Validators.pattern("^[1-9][0-9]*$")
       ]),
-      y: new FormControl({ value: '', disabled: false }, [Validators.required, Validators.pattern("^[1-9]*$")
+      y: new FormControl({ value: '', disabled: false }, [Validators.required, Validators.pattern("^[1-9][0-9]*$")
       ]),
     });
   }

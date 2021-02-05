@@ -1,32 +1,36 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 col-xs-4">
       <div class="arrangement-home">
-        <div class="row">
+        <div>
             <img src="/assets/img/logo.png" style="height: 70px; width: auto;" alt="">
         </div>
-        <div class="row title">
+        <div class=" title">
             <p>Bienvenue sur votre espace Client</p>
         </div>
-        <div class="row subtitle">
+        <div class=" subtitle">
             <p>Renseignez une valeur pour chaque champs</p>
         </div>
-        <div class="row">
+        <div>
             <form [formGroup]="formGraph">
-                <div class="form-row position-relative">
-                  <div class="col">
-                    <input type="text is-valid" class="form-control"  [ngClass]="{ 'is-invalid': !formSubmitted && f_ }" [ngClass]="{ 'is-valid': formSubmitted && f_ }" [(ngModel)]="x" formControlName="x" placeholder='Tapez "1"'>
+                <div class="row">
+                  <div class="form-group">
+                    <div class="col">
+                      <input type="text is-valid" class="form-control"  [ngClass]="{ 'is-invalid': !formSubmitted && f_ }" [ngClass]="{ 'is-valid': formSubmitted && f_ }" [(ngModel)]="x" formControlName="x" placeholder='Tapez "1"'>
+                    </div>
                   </div>
-                  <div class="col">
-                    <input type="text" class="form-control" [ngClass]="{ 'is-invalid': !formSubmitted && f_ }" [ngClass]="{ 'is-valid': formSubmitted && f_ }"  [(ngModel)]="y" formControlName="y" placeholder='Tapez "3"'>
+                  <div class="form-group">
+                    <div class="col">
+                      <input type="text" class="form-control" [ngClass]="{ 'is-invalid': !formSubmitted && f_ }" [ngClass]="{ 'is-valid': formSubmitted && f_ }"  [(ngModel)]="y" formControlName="y" placeholder='Tapez "3"'>
+                    </div>
                   </div>
                 </div>
-                  <button type="submit" (click)="func_showGraphic()" [disabled]="x === '' || y === '' " class="btn btn-montri-on">Visualiser</button>
+                <button type="submit" (click)="func_showGraphic()" [disabled]="x === '' || y === '' " class="btn btn-montri-on">Visualiser</button>
               </form>
         </div>
       </div>
     </div>
-    <div *ngIf="showGraphic" class="col-md-6 align-self-center">
+    <div *ngIf="showGraphic" class="col-md-6 col-xs-6 align-self-center">
       <app-graphic></app-graphic>
     </div>
   </div>
