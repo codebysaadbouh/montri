@@ -22,6 +22,9 @@
                   <div class="form-group">
                     <div class="col">
                       <input type="text" class="form-control" [ngClass]="{ 'is-invalid': !formSubmitted && f_ }" [ngClass]="{ 'is-valid': formSubmitted && f_ }"  [(ngModel)]="y" formControlName="y" placeholder='Tapez "3"'>
+                      <div style="font-size: 11px;" class="invalid-feedback text-right">
+                        Donnez des entiers supérieurs à 0 !
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -31,7 +34,7 @@
       </div>
     </div>
     <div *ngIf="showGraphic" class="col-md-6 col-xs-6 align-self-center">
-      <app-graphic></app-graphic>
+      <app-graphic [valeur_x] = "get_formGraph.x.value" [valeur_y] = "get_formGraph.y.value"></app-graphic>
     </div>
   </div>
 </div>

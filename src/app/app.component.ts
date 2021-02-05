@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,7 +13,7 @@ export class AppComponent implements OnInit {
   constructor(private formBuilder : FormBuilder) {
   }
   title = 'montri';
-  x: '' = ""; 
+  x: '' = "";
   y: '' = "";
   showGraphic : boolean = false;
   formSubmitted  : boolean = false;
@@ -33,16 +32,18 @@ export class AppComponent implements OnInit {
 
   
   get get_formGraph() { return this.formGraph.controls; }
+  
   func_showGraphic() {
-    this.f_ = true;
-    if (this.formGraph.invalid) {
-      return;
+      this.f_ = true;
+      if (this.formGraph.invalid) {
+        return;
+      }
+      else {
+        this.formSubmitted = true
+        console.log(this.get_formGraph.x.value);
+        console.log(this.get_formGraph.y.value);
+        this.showGraphic = true;
+      }
+     
     }
-    else {
-      this.formSubmitted = true
-      
-      this.showGraphic = true;
-    }
-    }
-
 }

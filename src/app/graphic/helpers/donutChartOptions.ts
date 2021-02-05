@@ -1,6 +1,5 @@
 import { Options } from "highcharts";
 
-
 export const donutChartOptions : Options = {
     chart : {
         type: 'pie', 
